@@ -138,7 +138,7 @@ nav h1 a {
   padding: 30px 15px 60px;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 }
 #restaurants-list li {
@@ -280,7 +280,17 @@ nav h1 a {
 }
 
 /* ====================== Media Queries ====================== */
-@media screen and (max-width: 825px) {
+@media screen and (min-width: 1163px) {
+  #restaurants-list li {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 1162px) and (min-width: 826px) {
+  #restaurants-list li {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 825px) and (min-width: 471px) {
   #restaurant-container {
     padding-left: 20px;
   }
@@ -290,8 +300,6 @@ nav h1 a {
 }
 
 @media screen and (max-width: 470px) {
-  #restaurant-container {
-    width: 45%;
-  }
+
 }
 
