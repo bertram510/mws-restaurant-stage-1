@@ -38,13 +38,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  position: relative;
+  top: 105px;
 }
 #footer {
   background-color: #444;
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -66,12 +67,10 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
 }
 
 /* Display list items side by side */
@@ -196,11 +195,8 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+  height: 200px;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
@@ -208,9 +204,9 @@ nav h1 a {
   width: 100%;
 }
 .inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
+  width: 100%;
+  position: relative;
+  top: 105px;
 }
 #restaurant-name {
   color: #f18200;
@@ -244,11 +240,8 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px 40px;
-  width: 50%;
-}
-#reviews-container {
-  padding: 30px 40px 80px;
+  padding-left: 10px;
+  width: 100%;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -290,16 +283,10 @@ nav h1 a {
     width: 35%;
   }
 }
-@media screen and (max-width: 825px) and (min-width: 471px) {
-  #restaurant-container {
-    padding-left: 20px;
-  }
-  #reviews-container {
-    padding-left: 20px;
+@media screen and (min-width: 625px) {
+  .inside #map-container {
+    height: 400px;
   }
 }
 
-@media screen and (max-width: 470px) {
-
-}
 
