@@ -8,6 +8,8 @@ const cacheFiles = [
     '/js/main.js',
     '/js/restaurant_info.js',
     '/data/restaurants.json',
+    // 'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
+    // 'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
     '/img/1.jpg',
     '/img/2.jpg',
     '/img/3.jpg',
@@ -33,6 +35,21 @@ self.addEventListener('install', event => {
     );
 });
 
+// self.addEventListener('activate', function(event) {
+// 	console.log('Service Worker Activated');
+// 	event.waitUntil(
+// 		caches.keys().then(function(cacheNames) {
+// 			return Promise.all(
+// 			    cacheNames.filter(function(cache) {
+// 			    	return cache != cacheName;
+// 			    }).map(function(cache) {
+// 			    	return caches.delete(cache);
+// 			    })
+// 			);
+// 		})
+// 	);
+// });
+
 self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
@@ -51,7 +68,7 @@ self.addEventListener('fetch', function(event) {
           return fetch(fetchRequest).then(
             function(response) {
               // Check if we received a valid response
-              if(!response || response.status !== 200 || response.type !== 'basic') {
+              if(!response || response.status !== 200) {
                 return response;
               }
   
@@ -69,6 +86,9 @@ self.addEventListener('fetch', function(event) {
               return response;
             }
           );
+        })
+        .catch(error => {
+            console.log("Fetch error: ", error);
         })
       );
   });
